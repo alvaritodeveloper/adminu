@@ -1,3 +1,4 @@
+@use "sass:math";
 // Topbar
 .topbar {
   height: $topbar-base-height;
@@ -15,7 +16,7 @@
     width: 25rem;
     input {
       font-size: 0.85rem;
-      height: auto;
+    //   height: auto;
     }
   }
   .topbar-divider {
@@ -42,7 +43,7 @@
     position: static;
     .dropdown-menu {
       width: calc(100% - #{$grid-gutter-width});
-      right: $grid-gutter-width / 2;
+      right: math.div($grid-gutter-width, 2);
     }
   }
   .dropdown-list {

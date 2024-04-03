@@ -1,8 +1,7 @@
 import './bootstraps';
 
-import 'jquery'
 import 'bootstrap'
-import 'jquery.easing'
+import '@popperjs/core'
 import './sb-admin-2.min'
 
 import Alpine from 'alpinejs';
