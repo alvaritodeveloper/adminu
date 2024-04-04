@@ -14,7 +14,7 @@ class InfrastructureController extends Controller
      */
     public function index():View
     {
-        return view('infraestructures.index');
+        return view('infraestructures');
     }
 
     /**

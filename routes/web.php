@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\InfrastructureController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,8 +23,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('chirps',InfrastructureController::class)
+Route::resource('infraestructures',InfrastructureController::class)
     ->only(['index', 'store'])
+    ->middleware(['auth', 'verified']);
+
+Route::resource('properties',PropertyController::class)
+    ->only(['index', 'store', 'destroy'])
     ->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';

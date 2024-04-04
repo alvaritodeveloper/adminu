@@ -1,11 +1,8 @@
 <x-init-layout>
     <div class="container">
-
         <!-- Outer Row -->
         <div class="row justify-content-center">
-
             <div class="col-xl-10 col-lg-12 col-md-9">
-
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
@@ -21,7 +18,7 @@
                                         <div class="mb-3">
                                             <input type="text"
                                                 class="form-control form-control-user @error('name') is-invalid @enderror"
-                                                id="name" aria-describedby="nameHelp" name="name"
+                                                id="name" aria-describedby="nameHelp" name="name" value="{{ old('name') }}"
                                                 placeholder="{{ __('User') }}" required autocomplete="username">
                                             @error('name')
                                                 <span class="invalid-feedback" role="alert">
@@ -33,11 +30,11 @@
                                             <input type="password"
                                                 class="form-control form-control-user @error('password') is-invalid @enderror"
                                                 name="password" id="password" placeholder="{{ __('Password') }}"
-                                                required>
+                                                required autocomplete="current-password">
                                         </div>
                                         <div class="mb-3">
                                             <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="remember_me"
+                                                <input type="checkbox" class="form-check-input custom-control-input" id="remember_me"
                                                     name="remember">
                                                 <label class="custom-control-label"
                                                     for="remember_me">{{ __('Remember me') }}</label>
